@@ -1,3 +1,0 @@
-pimpleFoam_calcRes_Qsas_n20.C
-
-EXE = $(FOAM_USER_APPBIN)/pimpleFoam_calcRes_Qsas_n20
