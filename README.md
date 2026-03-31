@@ -1,2 +1,8 @@
 # OpenFOAM-PhD-Extensions
-A collection of custom solvers, physical models, and function objects developed during my PhD research for OpenFOAM v9.
+A collection of custom solvers, physical models, and function objects developed and used during my PhD research for OpenFOAM v9.
+1. bubbleqmom-dev/applications/solvers/multiphase/multiphaseEulerFoam - includes various versions of the hybrid solver based on multiphaseEulerFoam with a few modifications between the versions. It also includes the population balance models.
+2. The main directory includes a few versions of pimpleFoam, which include calculations of resolved fields and the time-averaged fields for statistical quantification of scale-resolving simulations such as LES. Additionally, runtime time-averaging is used within the solver itself instead of the available function object to overcome identified limitations.
+3. turbModels_mod/src/MomentumTransportModels/momentumTransportModels - covers the various custom turbulence models that have been extended from the original formulation to include selected features.
+4. porousBafflePressureAMI - integrates cyclicAMI (and cyclicACMI) into the existing porousBafflePressure boundary condition, which originally only works for conforming mesh interfaces. This tool allows for virtual hydraulic resistance through a pair of periodic patches without the need for a physical geometry.
+5. periodicTimeVaryingMappedFixedValue - allows periodic reading of pre-written data onto a boundary (e.g., time-varying inlet condition). When the max time of available data is reached, it returns to the first time automatically and repeats.
+6. perturbU - initialisation for high-fidelity simulation with perturbations, based on (de Villiers, 2006)
